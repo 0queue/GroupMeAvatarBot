@@ -1,3 +1,5 @@
 /*
 !.gitignore
+!setup.sh
+!update-full.sh
 !src/
