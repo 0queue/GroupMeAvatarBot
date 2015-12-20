@@ -1,3 +1,9 @@
-TOKEN
-GROUPID
-out.png
+/*
+!.gitignore
+!create-avatar.sh
+!days-till.sh
+!find-group-id.sh
+!set-avatar.sh
+!setup.sh
+!update-full.sh
+!upload-picture.sh
