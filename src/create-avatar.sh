@@ -13,4 +13,4 @@ if [ ! -e "$1" ]; then
     exit 2
 fi
 
-convert $1 -gravity center -pointsize 100 -draw "text 0,0 '$2'" $3
+convert $1 -gravity center -pointsize 100 -draw "text 0,-25 '$2'" $3

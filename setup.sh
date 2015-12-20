@@ -45,5 +45,12 @@ else
     echo "Did NOT find jq, please install"
 fi
 
+which curl > /dev/null
+if [ $? -eq 0 ]; then
+    echo "Found curl"
+else
+    echo "Did NOT find curl, please install"
+fi
+
 echo
 echo "Setup complete"
