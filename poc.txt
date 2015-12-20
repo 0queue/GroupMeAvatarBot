@@ -1,0 +1,1 @@
+curl "https://api.groupme.com/v3/groups/$GID/update?access_token=$TOKEN" -H "Content-Type: application/json" -X POST -d '{"image_url": "https://i.groupme.com/100x100.jpeg.e1acd6f36a7e4508b81087862edbf8a0"}'
