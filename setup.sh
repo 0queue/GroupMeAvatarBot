@@ -13,7 +13,7 @@ if [ ! -e "$2" ]; then
     exit 2
 fi
 
-ID=`$MYDIR/find-group-id.sh "$1"`
+ID=`$MYDIR/src/find-group-id.sh "$1"`
 
 if [ $? -eq 0 ]; then
     echo $ID > GROUPID
@@ -37,3 +37,7 @@ if [ $? -eq 0 ]; then
 else
     echo "Did NOT find jq, please install"
 fi
+
+echo
+echo
+echo "Setup complete, please create a TOKEN file holding only your GroupMe API token (see dev.groupme.com, and create an application)"
