@@ -3,7 +3,7 @@
 
 MYDIR="$(dirname "$(which "$0")")"
 
-if [ $# -ne 2]; then
+if [ $# -ne 2 ]; then
     echo "Usage: setup.sh <group name> <template image>"
     exit 1
 fi
@@ -13,11 +13,18 @@ if [ ! -e "$2" ]; then
     exit 2
 fi
 
-ID=`$MYDIR/src/find-group-id.sh "$1"`
+TOKEN=`cat TOKEN`
+if [ -z "$TOKEN" ]; then
+    echo "Please set up a Group Me API access token.  Go to dev.groupme.com and create an application, then copy the key to the TOKEN file."
+    exit 3
+fi
 
+ID=`$MYDIR/src/find-group-id.sh "$1" $TOKEN`
 if [ $? -eq 0 ]; then
     echo $ID > GROUPID
     echo "Wrote GROUPID"
+else
+    echo "Error when finding Group ID"
 fi
 
 cp "$2" $MYDIR/template.png
@@ -39,5 +46,4 @@ else
 fi
 
 echo
-echo
-echo "Setup complete, please create a TOKEN file holding only your GroupMe API token (see dev.groupme.com, and create an application)"
+echo "Setup complete"
